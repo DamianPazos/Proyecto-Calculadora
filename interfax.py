@@ -20,7 +20,8 @@ def click_boton(valor):
     global operador
     operador += str(valor)
     input_text.set(operador)
-
+    
+# Elementos de la interfaz
 
 # Nombre de la ventana
 root.title('Calculadora - by Damian Pazos')
