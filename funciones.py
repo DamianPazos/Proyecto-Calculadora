@@ -19,3 +19,16 @@ def division(valor_uno, valor_dos):
     else:
         resultado = valor_uno / valor_dos
         return str(resultado)
+
+# Validador de numeros float
+def validar_float(numero):
+    contador = 0
+    if numero[0] == '.' or numero[-1] == '.':
+        return False
+    for i in numero:
+        if i == '.':
+            contador += 1
+    if contador == 0 or contador == 1:
+        return True
+    else:
+        return False

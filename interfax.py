@@ -47,21 +47,25 @@ def click_boton_operacion(valor):
 # Operacion
 def click_boton_igual():
     resultado = None
-    valor_uno = float(input_text_numero_display_uno.get())
-    valor_dos = float(input_text_numero_display_dos.get())
-    if operador_operacion == '':
-        pass
-    elif operador_operacion == '+':
-        resultado = suma(valor_uno, valor_dos)
-        input_text_resultado.set(resultado)
-    elif operador_operacion == '-':
-        resultado = resta(valor_uno, valor_dos)
-        input_text_resultado.set(resultado)
-    elif operador_operacion == '*':
-        resultado = multiplicacion(valor_uno, valor_dos)
-        input_text_resultado.set(resultado)
-    elif operador_operacion == '/':
-        resultado = division(valor_uno, valor_dos)
+    if validar_float(input_text_numero_display_uno.get()) and validar_float(input_text_numero_display_dos.get()):
+        valor_uno = float(input_text_numero_display_uno.get())
+        valor_dos = float(input_text_numero_display_dos.get())
+        if operador_operacion == '':
+            pass
+        elif operador_operacion == '+':
+            resultado = suma(valor_uno, valor_dos)
+            input_text_resultado.set(resultado)
+        elif operador_operacion == '-':
+            resultado = resta(valor_uno, valor_dos)
+            input_text_resultado.set(resultado)
+        elif operador_operacion == '*':
+            resultado = multiplicacion(valor_uno, valor_dos)
+            input_text_resultado.set(resultado)
+        elif operador_operacion == '/':
+            resultado = division(valor_uno, valor_dos)
+            input_text_resultado.set(resultado)
+    else:
+        resultado = 'Ingreso un numero no valido'
         input_text_resultado.set(resultado)
 
 # Elementos de la interfaz
